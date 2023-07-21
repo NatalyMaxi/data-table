@@ -56,5 +56,6 @@ const postsSlice = createSlice({
       });
   },
 });
+
 export const PostsAction = postsSlice.actions;
 export default postsSlice.reducer;
