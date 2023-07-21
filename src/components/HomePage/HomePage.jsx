@@ -27,6 +27,7 @@ function HomePage() {
       <Table
         setFilter={setFilter}
         visiblePosts={visiblePosts}
+        filter={filter}
       />
       <Paginator
       />

@@ -33,9 +33,6 @@ const postsSlice = createSlice({
     onNavigatePrev: (state) => {
       state.currentPage--;
     },
-    onChangeTodosPerpage: (state, action) => {
-      state.todosPerPage = action.payload;
-    },
     onClickCurrentPage: (state, action) => {
       state.currentPage = action.payload;
     }

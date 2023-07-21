@@ -1,18 +1,18 @@
 import Arrow from '../UI/Arrow/Arrow';
 import styles from './TableHeader.module.css';
 
-function TableHeader({ setFilter }) {
+function TableHeader({ setFilter, filter }) {
+
   const handleClick = (e) => {
     if (e.target.textContent === 'ID') {
-      setFilter('id')
+      setFilter({ ...filter, sort: 'id' })
     }
     if (e.target.textContent === 'Заголовок') {
-      console.log(e.target.textContent)
-      setFilter('title')
+      setFilter({ ...filter, sort: 'title' })
     }
     if (e.target.textContent === 'Описание') {
-      console.log(e.target.textContent)
-      setFilter('body')
+      setFilter({ ...filter, sort: 'body' })
+
     }
   }
 

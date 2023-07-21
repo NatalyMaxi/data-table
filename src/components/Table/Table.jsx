@@ -4,12 +4,12 @@ import Post from '../Post/Post';
 import TableHeader from '../TableHeader/TableHeader';
 import Preloader from '../Preloader/Preloader';
 
-function Table({ visiblePosts, setFilter }) {
+function Table({ visiblePosts, setFilter, filter }) {
   const { loading } = useSelector((state) => state.posts);
 
   return (
     <section className={styles.content}>
-      <TableHeader setFilter={setFilter} />
+      <TableHeader setFilter={setFilter} filter={filter} />
       {
         loading ? (<Preloader />) : (
           <div className={styles.grid}>
