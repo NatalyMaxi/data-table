@@ -1,0 +1,22 @@
+.tableHeader {
+  display: grid;
+  grid-template-columns: 10% 50% 40%;
+  grid-template-rows: 54px;
+  background: var(--main-grey);
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.title {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 137.687%;
+  color: var(--main-white);
+}

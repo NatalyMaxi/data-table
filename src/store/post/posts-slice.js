@@ -3,7 +3,7 @@ import api from '../../utils/api';
 
 const initialState = {
   posts: {},
-  loading: true,
+  loading: false,
   error: null,
 };
 
