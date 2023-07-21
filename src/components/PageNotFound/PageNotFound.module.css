@@ -1,0 +1,37 @@
+.pageNotFound {
+  height: 100vh;
+  background: var(--main-white);
+}
+
+.pageNotFoundContainer {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.pageNotFoundTitle {
+  text-align: center;
+  font-weight: 400;
+  font-size: 140px;
+  line-height: 169px;
+  padding: 200px 0 5px;
+  margin: 0;
+}
+
+.pageNotFoundText {
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  margin: 0 0 100px;
+}
+
+.pageNotFoundLink {
+  display: block;
+  max-width: 42px;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 17px;
+  text-decoration: none;
+  color: var(--color-green);
+  margin: 0 auto;
+}

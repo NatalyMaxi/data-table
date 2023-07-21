@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 import styles from './FlippingLink.module.css';
 
-function FlippingLink({ onClick, textLink }) {
+function FlippingLink({ onClick, textLink, path, disabled }) {
   return (
-    <div
-      className={styles.link}
+    <NavLink to={disabled ? null : `/${path}`}
+      className={disabled ? `${styles.link} ${styles.linkDisabled}` : styles.link}
       onClick={onClick}
     >
       {textLink}
-    </div>
+    </NavLink>
   );
 }
 

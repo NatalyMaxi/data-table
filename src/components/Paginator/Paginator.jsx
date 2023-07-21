@@ -1,22 +1,24 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams, useNavigate } from 'react-router-dom';
 import { PostsAction } from '../../store/post/posts-slice';
 import styles from './Paginator.module.css';
 import FlippingLink from '../UI/FlippingLink/FlippingLink';
 import PageLink from '../UI/PageLink/PageLink';
 
-function Paginator() {
+function Paginator({ sortedAndFilteredPosts }) {
   const dispatch = useDispatch();
-  const { posts, postsPerPage, currentPage } = useSelector((state) => state.posts);
-  const totalPages = Math.ceil(posts.length / postsPerPage);
+  const { postsPerPage, currentPage } = useSelector((state) => state.posts);
+  const totalPages = Math.ceil(sortedAndFilteredPosts.length / postsPerPage);
   const pages = [...Array(totalPages + 1).keys()].slice(1);
+  console.log(totalPages)
   const navigatePrev = () => {
-    if (currentPage !== 1) {
+    if (currentPage > 1) {
       dispatch(PostsAction.onNavigatePrev());
     }
   };
 
   const navigateNext = () => {
-    if (currentPage !== totalPages) {
+    if (currentPage !== totalPages && currentPage < totalPages) {
       dispatch(PostsAction.onNavigateNext());
     }
   };
@@ -27,7 +29,12 @@ function Paginator() {
 
   return (
     <div className={styles.paginator}>
-      <FlippingLink textLink='Назад' onClick={navigatePrev} />
+      <FlippingLink
+        textLink='Назад'
+        path={+currentPage - 1}
+        onClick={navigatePrev}
+        disabled={currentPage <= 1}
+      />
       <div className={styles.pageContainer}>
         {
           pages.map((page) => {
@@ -39,7 +46,12 @@ function Paginator() {
           })
         }
       </div>
-      <FlippingLink textLink='Далее' onClick={navigateNext} />
+      <FlippingLink
+        textLink='Далее'
+        path={+currentPage + 1}
+        onClick={navigateNext}
+        disabled={currentPage >= totalPages}
+      />
     </div>
   );
 }

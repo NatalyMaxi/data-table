@@ -11,3 +11,13 @@
 .link:hover {
   opacity: 0.7;
 }
+
+.linkDisabled {
+  opacity: 0.2;
+  cursor: default;
+}
+
+.linkDisabled:hover {
+  opacity: 0.2;
+  cursor: default;
+}

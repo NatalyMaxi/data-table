@@ -9,7 +9,7 @@
 
 body {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -23,5 +23,5 @@ body {
   --background-light-grey: #5a5c66;
   --text-grey: #b2b7bf;
   --border-grey: #e3e6ec;
-  --color-green: #7EBC3C;
+  --color-green: #7ebc3c;
 }
