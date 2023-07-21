@@ -15,7 +15,7 @@ function App() {
     <div className='App'>
       <BrowserRouter>
         <Routes>
-          <Route path={`/:id`} element={<HomePage />} />
+          <Route path='/:id' element={<HomePage />} />
         </Routes>
       </BrowserRouter>
     </div>
