@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import styles from './Post.module.css';
 
-function Post({ title, id, body }) {
+function Post({ id, title, body }) {
   return (
     <>
       <div className={`${styles.cell} ${styles.cellFirstColumn}`}>{id}</div>
@@ -9,5 +10,11 @@ function Post({ title, id, body }) {
     </>
   );
 }
+
+Post.propTypes = {
+  id: PropTypes.number,
+  title: PropTypes.string,
+  body: PropTypes.string,
+};
 
 export default Post;

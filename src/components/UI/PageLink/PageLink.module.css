@@ -1,11 +1,12 @@
-.link{
-color: var(--main-grey);
-font-size: 18px;
-font-style: italic;
-font-weight: 700;
-line-height: 137.687%;
+.link {
+  color: var(--main-grey);
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 137.687%;
+  text-decoration: none;
 }
 
 .linkActive {
-color: var(--color-green);
+  color: var(--color-green);
 }

@@ -2,8 +2,10 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import api from '../../utils/api';
 
 const initialState = {
-  posts: {},
+  posts: [],
   loading: false,
+  postsPerPage: 10,
+  currentPage: 1,
   error: null,
 };
 
@@ -14,7 +16,7 @@ export const fetchPosts = createAsyncThunk(
   async (_, { fulfillWithValue, rejectWithValue }) => {
     try {
       const posts = await api.getPosts();
-      return fulfillWithValue({ ...posts });
+      return fulfillWithValue([...posts]);
     } catch (err) {
       return rejectWithValue(err);
     }
@@ -24,7 +26,20 @@ export const fetchPosts = createAsyncThunk(
 const postsSlice = createSlice({
   name: sliceName,
   initialState,
-  reducers: {},
+  reducers: {
+    onNavigateNext: (state) => {
+      state.currentPage++;
+    },
+    onNavigatePrev: (state) => {
+      state.currentPage--;
+    },
+    onChangeTodosPerpage: (state, action) => {
+      state.todosPerPage = action.payload;
+    },
+    onClickCurrentPage: (state, action) => {
+      state.currentPage = action.payload;
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchPosts.pending, (state) => {
@@ -41,5 +56,5 @@ const postsSlice = createSlice({
       });
   },
 });
-
+export const PostsAction = postsSlice.actions;
 export default postsSlice.reducer;
