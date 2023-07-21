@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import styles from './Post.module.css';
 
-function Post({ id, title, body }) {
+function Post({ num, title, body }) {
   return (
     <>
-      <div className={`${styles.cell} ${styles.cellFirstColumn}`}>{id}</div>
+      <div className={`${styles.cell} ${styles.cellFirstColumn}`}>{num}</div>
       <div className={styles.cell}>{title}</div>
       <div className={styles.cell}>{body}</div>
     </>
@@ -12,7 +12,7 @@ function Post({ id, title, body }) {
 }
 
 Post.propTypes = {
-  id: PropTypes.number,
+  num: PropTypes.number,
   title: PropTypes.string,
   body: PropTypes.string,
 };

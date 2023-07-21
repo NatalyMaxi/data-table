@@ -9,7 +9,6 @@ function Paginator() {
   const { posts, postsPerPage, currentPage } = useSelector((state) => state.posts);
   const totalPages = Math.ceil(posts.length / postsPerPage);
   const pages = [...Array(totalPages + 1).keys()].slice(1);
-  console.log(totalPages)
   const navigatePrev = () => {
     if (currentPage !== 1) {
       dispatch(PostsAction.onNavigatePrev());

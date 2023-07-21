@@ -4,12 +4,12 @@ import Post from '../Post/Post';
 import TableHeader from '../TableHeader/TableHeader';
 import Preloader from '../Preloader/Preloader';
 
-function Table({ visiblePosts }) {
+function Table({ visiblePosts, setFilter }) {
   const { loading } = useSelector((state) => state.posts);
 
   return (
     <section className={styles.content}>
-      <TableHeader />
+      <TableHeader setFilter={setFilter} />
       {
         loading ? (<Preloader />) : (
           <div className={styles.grid}>
@@ -17,7 +17,7 @@ function Table({ visiblePosts }) {
               visiblePosts.map((post) => {
                 return <Post
                   key={post.id}
-                  id={post.id}
+                  num={post.id}
                   body={post.body}
                   title={post.title}
                 />
