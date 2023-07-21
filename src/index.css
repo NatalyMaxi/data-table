@@ -13,6 +13,7 @@ body {
   font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0 calc(20px - (100vw - 100%)) 0 0;
 }
 
 :root {

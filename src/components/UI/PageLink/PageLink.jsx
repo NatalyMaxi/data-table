@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import styles from './PageLink.module.css';
 
 function PageLink({ number, onClick }) {
-
   return (
     <NavLink
       to={`/${number}`}
@@ -17,6 +16,7 @@ function PageLink({ number, onClick }) {
 
 PageLink.propTypes = {
   number: PropTypes.number,
+  onClick: PropTypes.func,
 };
 
 export default PageLink;

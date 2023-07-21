@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { PostsAction } from '../../store/post/posts-slice';
 import Paginator from '../Paginator/Paginator';
@@ -6,7 +7,6 @@ import Table from '../Table/Table';
 import Search from '../UI/Search/Search';
 import styles from './HomePage.module.css';
 import { usePosts } from '../../hooks/usePosts';
-import { useParams } from 'react-router-dom';
 
 function HomePage() {
   const [filter, setFilter] = useState({ sort: '', query: '' });
@@ -20,7 +20,7 @@ function HomePage() {
 
   const onChange = (evt) => {
     setFilter({ ...filter, query: evt.target.value });
-  }
+  };
 
   useEffect(() => {
     dispatch(PostsAction.onClickCurrentPage(page));

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from './Search.module.css';
 import magnifier from '../../../images/magnifier.png';
 
@@ -15,5 +16,10 @@ function Search({ value, onChange }) {
     </div>
   );
 }
+
+Search.propTypes = {
+  onChange: PropTypes.func,
+  value: PropTypes.string,
+};
 
 export default Search;

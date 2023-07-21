@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import styles from './Table.module.css';
 import Post from '../Post/Post';
@@ -29,5 +30,11 @@ function Table({ visiblePosts, setFilter, filter }) {
     </section>
   );
 }
+
+Table.propTypes = {
+  visiblePosts: PropTypes.array,
+  setFilter: PropTypes.func,
+  filter: PropTypes.object,
+};
 
 export default Table;

@@ -1,5 +1,5 @@
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useNavigate } from 'react-router-dom';
 import { PostsAction } from '../../store/post/posts-slice';
 import styles from './Paginator.module.css';
 import FlippingLink from '../UI/FlippingLink/FlippingLink';
@@ -10,7 +10,7 @@ function Paginator({ sortedAndFilteredPosts }) {
   const { postsPerPage, currentPage } = useSelector((state) => state.posts);
   const totalPages = Math.ceil(sortedAndFilteredPosts.length / postsPerPage);
   const pages = [...Array(totalPages + 1).keys()].slice(1);
-  console.log(totalPages)
+
   const navigatePrev = () => {
     if (currentPage > 1) {
       dispatch(PostsAction.onNavigatePrev());
@@ -55,5 +55,9 @@ function Paginator({ sortedAndFilteredPosts }) {
     </div>
   );
 }
+
+Paginator.propTypes = {
+  sortedAndFilteredPosts: PropTypes.array,
+};
 
 export default Paginator;

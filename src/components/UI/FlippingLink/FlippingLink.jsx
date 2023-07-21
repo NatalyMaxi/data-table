@@ -16,6 +16,8 @@ function FlippingLink({ onClick, textLink, path, disabled }) {
 FlippingLink.propTypes = {
   onClick: PropTypes.func,
   textLink: PropTypes.string,
+  path: PropTypes.number,
+  disabled: PropTypes.bool,
 };
 
 export default FlippingLink;
