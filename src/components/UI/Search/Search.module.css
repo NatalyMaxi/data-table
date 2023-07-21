@@ -43,3 +43,29 @@ img {
   top: 15px;
   right: 24px;
 }
+
+@media screen and (max-width: 1023px) {
+  .search {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  .input {
+    font-size: 12px;
+    padding-left: 15px;
+    padding-right: 35px;
+  }
+
+  img {
+    width: 15px;
+    height: 15px;
+    top: 18px;
+    right: 14px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .search {
+    max-width: 70%;
+  }
+}

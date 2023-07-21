@@ -21,3 +21,18 @@
   line-height: 137.687%;
   color: var(--main-white);
 }
+
+@media screen and (max-width: 1023px) {
+  .tableHeader {
+    grid-template-columns: 8% 30% 62%;
+  }
+
+  .item {
+    gap: 5px;
+    padding: 2px;
+  }
+
+  .title {
+    font-size: 12px;
+  }
+}

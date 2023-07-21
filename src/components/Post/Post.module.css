@@ -15,3 +15,10 @@
   justify-content: center;
   border-left: solid 1px var(--border-grey);
 }
+
+@media screen and (max-width: 1023px) {
+  .cell {
+    font-size: 12px;
+    font-weight: 400;
+  }
+}

@@ -9,3 +9,10 @@
   grid-template-columns: 10% 50% 40%;
   width: 100%;
 }
+
+@media screen and (max-width: 1023px) {
+  .grid {
+    grid-template-columns: 8% 30% 62%;
+  }
+}
+
