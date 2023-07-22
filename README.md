@@ -45,4 +45,4 @@ $ npm run start
 #### :page_with_curl: Планы по доработке проекта:
 * Адаптировать проект под мобильную версию;
 
-####[Демо проекта](https://github.com/NatalyMaxi/data-table)
+[Демо проекта](https://natalymaxi.github.io/data-table)
